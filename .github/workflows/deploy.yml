@@ -5,16 +5,21 @@ on:
   - push
 
 jobs:
-  build_and_preview:
-    if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: oven-sh/setup-bun@v2
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-      - uses: actions/checkout@v4
+
+      - name: Checkout git
+        uses: actions/checkout@v4
+
       - run: bun install --frozen-lockfile && bun run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+
+      - name: Deploy to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_PORTFOLIO_15896 }}"
