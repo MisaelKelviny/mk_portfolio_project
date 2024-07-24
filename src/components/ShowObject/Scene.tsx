@@ -5,7 +5,7 @@ import Prism from "./Prism";
 function Scene() {
   return (
     <>
-      <Light position={[20, 20, 20]} />
+      <Light />
       <Prism position={[0, -1, 0]} />
     </>
   );

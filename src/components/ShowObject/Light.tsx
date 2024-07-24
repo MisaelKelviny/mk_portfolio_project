@@ -1,13 +1,13 @@
 import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
-import { Vector3 } from "three";
+import { PointLight, Vector3 } from "three";
 
-function Light({ ...props }) {
-  const lightRef = useRef(null);
+function Light() {
+  const lightRef = useRef<PointLight>(null!);
   const mouse = useRef([0, 0]);
 
   useEffect(() => {
-    const handleMouseMove = (event) => {
+    const handleMouseMove = (event: MouseEvent) => {
       event.preventDefault();
       mouse.current = [
         (event.clientX / window.innerWidth) * 2 - 1,
@@ -19,7 +19,7 @@ function Light({ ...props }) {
   }, []);
 
   useFrame(() => {
-    if (lightRef.current) {
+    if (lightRef.current !== null) {
       lightRef.current.position.lerp(
         new Vector3(mouse.current[0] * 7, mouse.current[1] * 7, 0),
         0.1

@@ -1,18 +1,12 @@
-import {
-  MeshTransmissionMaterial,
-  Preload,
-  useGLTF,
-  useTexture,
-} from "@react-three/drei";
+import { MeshTransmissionMaterial, Preload, useGLTF } from "@react-three/drei";
 import { GroupProps } from "@react-three/fiber";
 import { useRef } from "react";
-import { Texture, Vector3 } from "three";
+import * as THREE from "three";
+import { Vector3 } from "three";
 
 function Prism(props: GroupProps) {
   const { nodes } = useGLTF("/gltf/prism.glb");
   const myMesh = useRef(null);
-  const texture = useTexture("/glass_texture.jpg") as Texture;
-
   const mouse = useRef([0, 0]);
 
   return (
@@ -23,12 +17,11 @@ function Prism(props: GroupProps) {
         renderOrder={10}
         scale={2.0}
         dispose={null}
-        geometry={nodes.Cone.geometry}
+        geometry={(nodes.Cone as THREE.Mesh).geometry}
         rotation={[Math.PI / 1, 0, 0]}
         lookAt={() => new Vector3(mouse.current[0], mouse.current[1], 0)}
       >
         <MeshTransmissionMaterial
-          // envMap={texture}
           backside
           backsideThickness={3}
           samples={16}
