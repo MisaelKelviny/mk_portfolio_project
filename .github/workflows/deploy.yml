@@ -2,7 +2,7 @@ name: Deploy to Firebase Hosting on PR
 run-name: Deploy to firebase
 
 on:
-  - pull_request
+  - push
 
 jobs:
   build_and_preview:
