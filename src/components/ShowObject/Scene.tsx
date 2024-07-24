@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import Light from "./Light";
 import Prism from "./Prism";
 
