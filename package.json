@@ -24,6 +24,7 @@
     "@vitejs/plugin-react-swc": "^3.5.0",
     "@react-three/postprocessing": "^2.0.1",
     "autoprefixer": "^10.4.19",
+    "@react-three/drei": "^9.17.0",
     "clsx": "^2.1.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
