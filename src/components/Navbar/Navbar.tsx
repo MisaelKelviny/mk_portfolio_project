@@ -70,7 +70,10 @@ const Navbar = () => {
         link="https://www.linkedin.com/in/misael-kelviny/"
       />
       <AnimatedText text={"GITHUB"} link="https://github.com/MisaelKelviny" />
-      <AnimatedText text={"My.CV"} link="#" />
+      <AnimatedText
+        text={"My.CV"}
+        link="/public/Misael-Kelviny-da-Silva-Resume.pdf"
+      />
     </motion.div>
   );
 };

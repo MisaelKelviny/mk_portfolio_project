@@ -8,9 +8,9 @@ export const About = () => {
   return (
     <div
       ref={ref}
-      className="h-full w-full items-center justify-center border border-y-transparent border-x-zinc-800 flex flex-col"
+      className="h-full w-full items-center justify-center border border-y-transparent border-x-zinc-800 flex flex-col z-20 relative"
     >
-      <motion.div className="border w-full flex items-center justify-between gap-20 border-y-zinc-800 border-x-transparent">
+      <motion.div className="border w-full flex items-center justify-between gap-20 border-y-zinc-800 border-x-transparent px-10">
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           whileInView={{
@@ -24,7 +24,7 @@ export const About = () => {
           viewport={{ once: true }}
           className="size-3/4 gap-20 flex flex-col justify-center"
         >
-          <h3 className="border border-zinc-900 border-x-transparent border-t-transparent text-4xl">
+          <h3 className="border border-zinc-800 border-x-transparent border-t-transparent text-4xl">
             Hello, there 👋
           </h3>
           <p className="text-3xl">

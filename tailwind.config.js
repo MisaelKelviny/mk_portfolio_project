@@ -12,11 +12,20 @@ export default {
       },
       animation: {
         fuzzy: "shift 0.2s linear infinite both",
+        aurora: "aurora 60s linear infinite",
       },
       keyframes: {
         shift: {
           "0%": { transform: "translate(10%, 10%)" },
           "100%": { transform: "translate(-10%, -10%)" },
+        },
+        aurora: {
+          from: {
+            backgroundPosition: "50% 50%, 50% 50%",
+          },
+          to: {
+            backgroundPosition: "350% 50%, 350% 50%",
+          },
         },
       },
       fontSize: {

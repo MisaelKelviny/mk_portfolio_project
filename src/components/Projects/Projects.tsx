@@ -1,37 +1,61 @@
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
+import { useRef } from "react";
 import { projects } from "../../constants/projects";
+import { useParallax } from "../../data/hooks/useParallax";
+
+function Image({
+  image,
+  title,
+  id,
+}: Readonly<{
+  id: number;
+  image: string;
+  title: string;
+}>) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useParallax(scrollYProgress, 50);
+
+  return (
+    <div key={id} className="w-full h-4/5 overflow-hidden">
+      <div ref={ref} className="overflow-hidden h-[90%]">
+        <motion.video
+          style={{ y }}
+          src={image}
+          muted={true}
+          autoPlay={true}
+          className="object-cover"
+          loop={true}
+        />
+      </div>
+    </div>
+  );
+}
 
 function Projects() {
   return (
-    <div className="h-full border border-y-transparent border-x-zinc-900">
-      <div className="flex flex-col gap-20 justify-center">
-        <h3 className="border border-zinc-900 border-x-transparent text-4xl">
-          Some Projects
-        </h3>
-      </div>
-      <div className="flex h-full items-center gap-20 px-20 py-20">
-        {projects.map((p) => (
-          <motion.div
-            key={p.id}
-            whileHover={{ scale: 1.1 }}
-            animate={{ x: 0 }}
-            className="flex flex-col h-3/5 w-1/5 justify-center bg-zinc-900 rounded-lg p-6 cursor-pointer"
-            onClick={() => window.open(p.link, "_blank")}
-          >
-            <div className="">
-              <img src={p.image} alt={p.title} className="w-full object-fill" />
-            </div>
-            <div className="flex h-full justify-between flex-col gap-5">
-              <span className="text-zinc-600 font-semibold text-2xl">
-                {p.title}
-              </span>
-              <div className="flex gap-2 text-zinc-400">
-                {p.technologies.map((i) => (
-                  <div key={i}>{i}</div>
-                ))}
+    <div className="h-full border border-y-zinc-800 border-x-zinc-800 py-40">
+      <div className="grid grid-cols-2 gap-20 px-10">
+        {projects.map((p, index) => (
+          <div key={p.id}>
+            <a
+              href={p.link}
+              target="_blank"
+              className="flex flex-col w-full h-4/5 overflow-hidden"
+            >
+              <Image id={index} image={p.image} title={p.title} />
+              <div className="flex flex-col gap-2">
+                <p className="uppercase font-semibold text-2xl">{p.title}</p>
+                <div className="flex gap-2 text-left">
+                  {p.technologies.map((p) => (
+                    <span key={p} className="text-zinc-500">
+                      {p}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </a>
+          </div>
         ))}
       </div>
     </div>
