@@ -19,7 +19,7 @@ const Landing = () => {
           initial={{ x: "-100%" }}
           animate={{ x: "0%" }}
           transition={{ duration: 1, delay: 4 }}
-          className="flex justify-between items-center relative border border-x-transparent border-y-zinc-800"
+          className="flex justify-between items-center relative border border-x-transparent border-b-zinc-800 border-t-0"
         >
           <div
             className="relative h-full overflow-hidden py-12 mx-auto hidden xl:block"

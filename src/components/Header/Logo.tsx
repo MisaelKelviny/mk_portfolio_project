@@ -11,7 +11,7 @@ function Logo() {
         ease: "easeInOut",
         delay: 4,
       }}
-      className="z-20 font-semibold text-left text-logo w-full"
+      className="z-20 font-semibold text-left md:text-logo text-7xl w-full leading-tight "
     >
       MISAEL KELVINY
     </motion.div>

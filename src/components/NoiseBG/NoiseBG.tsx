@@ -4,7 +4,7 @@ function NoiseBG() {
   return (
     <div className="cursor-pointerAll z-10 fixed opacity-15 top-0 left-[-4%] w-[120%]">
       <motion.svg
-        viewBox="0 0 200 200"
+        viewBox="0 0 100 200"
         xmlns="http://www.w3.org/2000/svg"
         initial={{ x: 0 }}
         animate={{

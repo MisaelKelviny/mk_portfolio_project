@@ -64,7 +64,7 @@ export const AnimatedText = ({
 
 const Navbar = () => {
   return (
-    <motion.div className="w-full flex gap-20 justify-end">
+    <motion.div className="w-full flex sm:gap-20 gap-2 justify-end">
       <AnimatedText
         text={"LINKEDIN"}
         link="https://www.linkedin.com/in/misael-kelviny/"
