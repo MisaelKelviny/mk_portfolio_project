@@ -30,10 +30,8 @@ export const About = () => {
               Hello, there 👋
             </h3>
             <p className="text-3xl">
-              Based in São Paulo/BR, 6+ years of experience across Software
-              Development disciplines(Frontend, Backend and UI). A passionate
-              developer and I love what I do, and I strongly believe in;{" "}
-              <strong>"The less it is the cooler is your interface"</strong>
+              Based in Minas Gerais/BR, 6+ years of experience across Software
+              Development disciplines (Frontend, Backend and QA).
             </p>
           </motion.div>
           <motion.div
@@ -54,7 +52,7 @@ export const About = () => {
               alt="profile-pic"
               width={200}
               height={200}
-              className="grayscale w-2/5 object-cover p-4 border border-zinc-800 border-y-0"
+              className="grayscale w-2/5 object-cover p-4 border border-zinc-800 border-y-0 mx-auto"
             />
           </motion.div>
         </motion.div>
