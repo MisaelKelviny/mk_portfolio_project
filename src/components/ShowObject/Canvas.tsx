@@ -78,7 +78,7 @@ function CanvasObject() {
             }}
             viewport={{ once: true, root: ref }}
             key={w.title}
-            className={`${w.positon} z-20 lg:w-1/4 w-full h-fit lg:absolute p-2 border border-zinc-800`}
+            className={`${w.position} z-20 lg:w-1/4 w-full h-fit lg:absolute p-2 border border-zinc-800`}
           >
             <div
               className={`bg-zinc-900 shadow-lg p-5 rounded flex flex-col space-y-5`}

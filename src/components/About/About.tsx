@@ -31,7 +31,7 @@ export const About = () => {
             </h3>
             <p className="text-3xl">
               Based in Minas Gerais/BR, 6+ years of experience across Software
-              Development disciplines (Frontend, Backend and QA).
+              Development disciplines (Frontend, Backend, Mobile and QA).
             </p>
           </motion.div>
           <motion.div
