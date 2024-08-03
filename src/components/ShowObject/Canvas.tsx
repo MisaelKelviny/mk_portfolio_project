@@ -20,7 +20,7 @@ function CanvasObject() {
     <Container>
       <div
         ref={ref}
-        className="h-screen w-full border border-y-transparent border-x-0 flex flex-col gap-10 relative z-20"
+        className="h-screen w-full border border-y-transparent border-x-0 flex flex-col gap-10 relative"
       >
         <GridBg />
         <Canvas
