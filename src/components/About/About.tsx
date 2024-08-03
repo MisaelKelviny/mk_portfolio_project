@@ -12,7 +12,7 @@ export const About = () => {
         ref={ref}
         className="h-full w-full items-center justify-center border border-y-transparent border-x-0 flex flex-col z-20 relative"
       >
-        <motion.div className="border w-full flex items-center justify-between gap-20 border-y-zinc-800 border-x-transparent md:px-10 pt-20 md:pt-0">
+        <motion.div className="border w-full flex flex-col lg:flex-row items-center justify-between gap-20 border-y-zinc-800 border-x-transparent md:px-10 pt-20 md:pt-0 ">
           <motion.div
             initial={{ x: -100, opacity: 0 }}
             whileInView={{
@@ -26,9 +26,7 @@ export const About = () => {
             viewport={{ once: true }}
             className="size-3/4 gap-20 flex flex-col justify-center"
           >
-            <h3 className="border border-zinc-800 border-x-transparent border-t-transparent text-4xl">
-              Hello, there 👋
-            </h3>
+            <h3 className="text-4xl">Hello, there 👋</h3>
             <p className="text-3xl">
               Based in Minas Gerais/BR, 6+ years of experience across Software
               Development disciplines (Frontend, Backend, Mobile and QA).
@@ -45,14 +43,12 @@ export const About = () => {
               },
             }}
             viewport={{ once: true }}
-            className="lg:block hidden justify-end size-full"
+            className="w-full md:h-[700px] h-[500px] justify-end size-full "
           >
             <img
               src={profile}
               alt="profile-pic"
-              width={200}
-              height={200}
-              className="grayscale w-2/5 object-cover p-4 border border-zinc-800 border-y-0 mx-auto"
+              className="xl:w-2/3 w-full h-full object-cover p-4 border lg:border-zinc-800 border-transparent border-y-0 mx-auto"
             />
           </motion.div>
         </motion.div>

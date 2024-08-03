@@ -19,19 +19,22 @@ function App() {
 
   return (
     <>
-      {showSplash && <SplashScreen />}
-      <div
-        className={`${
-          showSplash ? "hidden" : ""
-        } noise-bg dark min-h-screen min-w-screen relative overflow-y-auto no-scrollbar antialiased bg-zinc-950 font-instrumentSans`}
-      >
-        <Header />
-        <CanvasObject />
-        <Projects />
-        <Experiences />
-        <About />
-        <Footer />
-      </div>
+      {showSplash ? (
+        <SplashScreen />
+      ) : (
+        <div
+          className={`${
+            showSplash ? "hidden" : ""
+          } noise-bg dark min-h-screen min-w-screen relative overflow-y-auto no-scrollbar antialiased bg-zinc-950 font-instrumentSans`}
+        >
+          <Header />
+          <CanvasObject />
+          <Projects />
+          <Experiences />
+          <About />
+          <Footer />
+        </div>
+      )}
       <NoiseBG />
     </>
   );

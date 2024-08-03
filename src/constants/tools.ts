@@ -11,7 +11,7 @@ export const tools = {
   ],
   backend: [
     "Java",
-    "Spring Boot",
+    "Spring Framework",
     "PostgreSQL",
     "Junit",
     "Lua",
@@ -19,6 +19,14 @@ export const tools = {
     "Nest.js",
     "OracleDB",
   ],
-  mobile: ["Android Studio", "React Native", "Java", "Kotlin"],
-  cloud: ["AWS", "Azure", "Jenkins", "Github Actions", "Docker", "CI/CD"],
+  mobile: ["Android Studio", "React Native", "PWA", "Kotlin"],
+  cloud: [
+    "AWS",
+    "Azure",
+    "Jenkins",
+    "Github Actions",
+    "Docker",
+    "CI/CD",
+    "Kubernets",
+  ],
 };

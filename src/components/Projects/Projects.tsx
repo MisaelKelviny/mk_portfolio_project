@@ -6,20 +6,23 @@ import Container from "../template/Container";
 
 function VideoComponent({
   image,
+  video,
   id,
+  title,
 }: Readonly<{
   id: number;
-  image: string;
+  image?: string;
   title: string;
+  video?: string;
 }>) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 20);
 
-  return (
+  return image === undefined ? (
     <motion.video
-      whileHover={{ scale: 1.1 }}
-      style={{ y }}
+      whileHover={{ scale: 1.3 }}
+      style={{ y, scale: 1.4 }}
       muted
       autoPlay
       loop
@@ -27,8 +30,16 @@ function VideoComponent({
       key={id}
       className="w-full min-h-[400px] mx-auto aspect-video object-cover"
     >
-      <source src={image} type="video/mp4" />
+      <source src={video} type="video/mp4" />
     </motion.video>
+  ) : (
+    <motion.img
+      src={image}
+      alt={title}
+      whileHover={{ scale: 1.3 }}
+      style={{ y, scale: 1.4 }}
+      className="w-full min-h-[400px] mx-auto aspect-video object-cover"
+    />
   );
 }
 
@@ -39,10 +50,15 @@ function Projects() {
         <h2 className="text-3xl uppercase font-semibold">Some Projects</h2>
         <div className="grid xl:grid-cols-3 lg:grid-cols-2 gap-5 md:grid-cols-1 overflow-hidden">
           {projects.map((p, index) => (
-            <div key={p.title}>
+            <div key={p.title} className="flex flex-col gap-5">
               <a key={p.title} href={p.link} target="_blank">
                 <div className="min-h-[400px] overflow-hidden">
-                  <VideoComponent id={index} image={p.image} title={p.title} />
+                  <VideoComponent
+                    id={index}
+                    image={p.image}
+                    video={p.video}
+                    title={p.title}
+                  />
                 </div>
               </a>
               <div className="flex flex-col gap-2">

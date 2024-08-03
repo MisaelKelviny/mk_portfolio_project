@@ -10,7 +10,7 @@ const Landing = () => {
         <motion.div
           initial={{ x: "100%" }}
           animate={{ x: "0%" }}
-          transition={{ duration: 1, delay: 4 }}
+          transition={{ duration: 1 }}
           className="relative z-20 text-left border border-x-transparent border-y-zinc-800"
         >
           <span className="text-7xl text-landing">CREATIVE DEVELOPER</span>
@@ -18,7 +18,7 @@ const Landing = () => {
         <motion.div
           initial={{ x: "-100%" }}
           animate={{ x: "0%" }}
-          transition={{ duration: 1, delay: 4 }}
+          transition={{ duration: 1 }}
           className="flex justify-between items-center relative border border-x-transparent border-b-zinc-800 border-t-0"
         >
           <div
@@ -35,7 +35,6 @@ const Landing = () => {
                   ease: "linear",
                   duration: 15,
                   repeat: Infinity,
-                  delay: 4,
                 },
               }}
             >
