@@ -3,7 +3,7 @@ import Container from "../template/Container";
 function Footer() {
   return (
     <Container>
-      <div className="h-[300px] items-center justify-center border border-y-transparent border-x-0 flex flex-col z-20 relative">
+      <div className="h-[300px] items-center justify-center border border-b-0 border-t-zinc-800 border-x-0 flex flex-col z-20 relative">
         <div className="flex flex-col justify-center text-center">
           <div>
             <a href="mailto: misaelkelviny@gmail.com" type="email">

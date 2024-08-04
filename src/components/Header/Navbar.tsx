@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import audio from "../../assets/audio/mouseEnter.wav";
+import { useRef } from "react";
 
 export const AnimatedText = ({
   text,
@@ -9,6 +9,7 @@ export const AnimatedText = ({
   text: string;
   link: string;
 }) => {
+  const ref = useRef<HTMLAnchorElement>(null);
   const characters = text.split("");
   const container = {
     hidden: { opacity: 0 },
@@ -33,20 +34,16 @@ export const AnimatedText = ({
     },
   };
 
-  const playSound = () => {
-    new Audio(audio).play();
-  };
-
   return (
     <motion.a
       href={link}
+      ref={ref}
       variants={container}
       target="_blank"
       initial="hidden"
       animate="visible"
       style={{ display: "flex", overflow: "hidden" }}
       className="hover:text-purple-400 cursor-pointer z-20"
-      onMouseEnter={() => playSound()}
     >
       {characters.map((char, index) => (
         <motion.span

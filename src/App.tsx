@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import AnimatedCursor from "react-animated-cursor";
 import { About } from "./components/About/About";
 import Experiences from "./components/Experiences/Experiences";
 import Footer from "./components/Footer/Footer";
@@ -19,6 +20,22 @@ function App() {
 
   return (
     <>
+      <AnimatedCursor
+        innerSize={25}
+        outerSize={20}
+        color="31, 41, 55"
+        innerStyle={{
+          backgroundColor: "transparent",
+          border: "1px solid #3f3f46",
+        }}
+        outerStyle={{
+          backgroundColor: "transparent",
+        }}
+        outerAlpha={0.2}
+        innerScale={3}
+        outerScale={3}
+        showSystemCursor={true}
+      />
       {showSplash ? (
         <SplashScreen />
       ) : (
@@ -29,9 +46,9 @@ function App() {
         >
           <Header />
           <CanvasObject />
+          <About />
           <Projects />
           <Experiences />
-          <About />
           <Footer />
         </div>
       )}
