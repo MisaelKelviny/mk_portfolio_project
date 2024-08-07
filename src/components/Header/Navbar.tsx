@@ -69,7 +69,7 @@ const Navbar = () => {
       <AnimatedText text={"GITHUB"} link="https://github.com/MisaelKelviny" />
       <AnimatedText
         text={"My.CV"}
-        link="/public/Misael-Kelviny-da-Silva-Resume.pdf"
+        link="/Misael-Kelviny-da-Silva-Resume.pdf"
       />
     </motion.div>
   );
