@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import splashSound from "../../assets/audio/splashSound.wav";
 import { AnimatedText } from "../template/AnimatedText";
 
 const draw = {
@@ -19,6 +20,7 @@ const draw = {
 
 function SplashScreen() {
   const [first, setFirst] = useState(true);
+  const refSplash = useRef<HTMLAudioElement | null>(null);
 
   setInterval(() => {
     setFirst(!first);
@@ -104,6 +106,7 @@ function SplashScreen() {
           </motion.svg>
         </div>
       </div>
+      <audio src={splashSound} ref={refSplash} />
     </div>
   );
 }

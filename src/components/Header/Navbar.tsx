@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import clickAudio from "../../assets/audio/mouseEnter.wav";
+import { TIMER } from "../../constants/timer";
 
 export const AnimatedText = ({
   text,
@@ -9,6 +11,7 @@ export const AnimatedText = ({
   text: string;
   link: string;
 }) => {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const ref = useRef<HTMLAnchorElement>(null);
   const characters = text.split("");
   const container = {
@@ -44,6 +47,7 @@ export const AnimatedText = ({
       animate="visible"
       style={{ display: "flex", overflow: "hidden" }}
       className="hover:text-purple-400 cursor-pointer z-20"
+      onMouseEnter={() => audioRef.current?.play()}
     >
       {characters.map((char, index) => (
         <motion.span
@@ -55,23 +59,34 @@ export const AnimatedText = ({
         </motion.span>
       ))}
       <ArrowUpRight />
+      <audio ref={audioRef} src={clickAudio} />
     </motion.a>
   );
 };
 
 const Navbar = () => {
+  const [timer, setTimer] = useState<boolean>(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setTimer(false);
+    }, TIMER + 200);
+  }, []);
+
   return (
-    <motion.div className="w-full flex sm:gap-20 gap-2 justify-end">
-      <AnimatedText
-        text={"LINKEDIN"}
-        link="https://www.linkedin.com/in/misael-kelviny/"
-      />
-      <AnimatedText text={"GITHUB"} link="https://github.com/MisaelKelviny" />
-      <AnimatedText
-        text={"My.CV"}
-        link="/Misael-Kelviny-da-Silva-Resume.pdf"
-      />
-    </motion.div>
+    !timer && (
+      <motion.div className="w-full flex sm:gap-20 gap-2 justify-end">
+        <AnimatedText
+          text={"LINKEDIN"}
+          link="https://www.linkedin.com/in/misael-kelviny/"
+        />
+        <AnimatedText text={"GITHUB"} link="https://github.com/MisaelKelviny" />
+        <AnimatedText
+          text={"My.CV"}
+          link="/Misael-Kelviny-da-Silva-Resume.pdf"
+        />
+      </motion.div>
+    )
   );
 };
 

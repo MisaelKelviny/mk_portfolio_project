@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { DELAY } from "../../constants/timer";
 
 function Logo() {
   return (
@@ -7,6 +8,7 @@ function Logo() {
       animate={{ opacity: [0, 1] }}
       transition={{
         duration: 1,
+        delay: DELAY,
         loop: Infinity,
         ease: "easeInOut",
       }}

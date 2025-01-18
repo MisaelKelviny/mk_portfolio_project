@@ -8,6 +8,7 @@ import NoiseBG from "./components/NoiseBG/NoiseBG";
 import Projects from "./components/Projects/Projects";
 import CanvasObject from "./components/ShowObject/Canvas";
 import SplashScreen from "./components/SplashScreen/SplashScreen";
+import { TIMER } from "./constants/timer";
 
 function App() {
   const [isLoad, setIsLoad] = useState<boolean>(true);
@@ -17,7 +18,7 @@ function App() {
     if (!isLoad) {
       setTimeout(() => {
         setSplash(false);
-      }, 4000);
+      }, TIMER);
     }
   }, [isLoad]);
 

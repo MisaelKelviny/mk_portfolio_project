@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { brands } from "../../constants/brands";
+import { DELAY } from "../../constants/timer";
 
 const Landing = () => {
   const duplicates = [...brands, ...brands];
@@ -10,7 +11,7 @@ const Landing = () => {
         <motion.div
           initial={{ x: "100%" }}
           animate={{ x: "0%" }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1, delay: DELAY }}
           className="relative z-20 text-left border border-x-transparent border-y-zinc-800"
         >
           <span className="text-7xl text-landing">CREATIVE DEVELOPER</span>
@@ -18,7 +19,7 @@ const Landing = () => {
         <motion.div
           initial={{ x: "-100%" }}
           animate={{ x: "0%" }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1, delay: DELAY }}
           className="flex justify-between items-center relative border border-x-transparent border-b-zinc-800 border-t-0"
         >
           <div
