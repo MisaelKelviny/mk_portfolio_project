@@ -25,7 +25,7 @@ function SplashScreen() {
   }, 2000);
 
   return (
-    <div className="min-h-screen w-screen bg-zinc-950 text-white flex items-center justify-center">
+    <div className="min-h-screen w-screen bg-zinc-950 text-white flex items-center justify-center fixed top-0 z-[100] overflow-hidden">
       <div className="relative">
         <div className="relative top-0 text-center">
           {first ? (

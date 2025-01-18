@@ -13,7 +13,9 @@ import GridBg from "../NoiseBG/GridBg";
 import Container from "../template/Container";
 import Scene from "./Scene";
 
-function CanvasObject() {
+function CanvasObject({
+  setLoad,
+}: Readonly<{ setLoad: (e: boolean) => void }>) {
   const ref = useRef(null);
 
   return (
@@ -55,7 +57,7 @@ function CanvasObject() {
             color={"purple"}
             intensity={200}
           />
-          <Scene />
+          <Scene setLoad={setLoad} />
           <EffectComposer enableNormalPass={true}>
             <Bloom mipmapBlur luminanceThreshold={1} intensity={2} />
             <HueSaturation hue={0} saturation={-0.25} />

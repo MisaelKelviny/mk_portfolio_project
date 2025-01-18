@@ -28,8 +28,8 @@ export const About = () => {
           >
             <h3 className="text-4xl">Hello, there 👋</h3>
             <p className="text-3xl">
-              Based in Minas Gerais/BR, 6+ years of experience across Software
-              Development (Frontend, Backend, Mobile and QA).
+              Based in Minas Gerais/Brazil, 6+ years of experience across
+              Software Development (Frontend, Backend, Mobile and QA).
             </p>
           </motion.div>
           <motion.div

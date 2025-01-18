@@ -4,7 +4,11 @@ import { useRef } from "react";
 import * as THREE from "three";
 import { Vector3 } from "three";
 
-function Prism(props: GroupProps) {
+interface PrismProps extends GroupProps {
+  setLoad: (e: boolean) => void;
+}
+
+function Prism(props: PrismProps) {
   const { nodes } = useGLTF("/gltf/prism.glb");
   const myMesh = useRef(null);
   const mouse = useRef([0, 0]);
@@ -20,6 +24,9 @@ function Prism(props: GroupProps) {
         geometry={(nodes.Cone as THREE.Mesh).geometry}
         rotation={[Math.PI / 1, 0, 0]}
         lookAt={() => new Vector3(mouse.current[0], mouse.current[1], 0)}
+        onAfterRender={() => {
+          props.setLoad(false);
+        }}
       >
         <MeshTransmissionMaterial
           backside

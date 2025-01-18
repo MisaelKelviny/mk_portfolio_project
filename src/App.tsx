@@ -10,13 +10,16 @@ import CanvasObject from "./components/ShowObject/Canvas";
 import SplashScreen from "./components/SplashScreen/SplashScreen";
 
 function App() {
-  const [showSplash, setShowSplash] = useState(true);
+  const [isLoad, setIsLoad] = useState<boolean>(true);
+  const [splash, setSplash] = useState<boolean>(true);
 
   useEffect(() => {
-    setTimeout(() => {
-      setShowSplash(false);
-    }, 4000);
-  }, []);
+    if (!isLoad) {
+      setTimeout(() => {
+        setSplash(false);
+      }, 4000);
+    }
+  }, [isLoad]);
 
   return (
     <>
@@ -36,22 +39,19 @@ function App() {
         outerScale={3}
         showSystemCursor={true}
       />
-      {showSplash ? (
-        <SplashScreen />
-      ) : (
-        <div
-          className={`${
-            showSplash ? "hidden" : ""
-          } noise-bg dark min-h-screen min-w-screen relative overflow-y-auto no-scrollbar antialiased bg-zinc-950 font-instrumentSans`}
-        >
-          <Header />
-          <CanvasObject />
-          <About />
-          <Projects />
-          <Experiences />
-          <Footer />
-        </div>
-      )}
+      {splash && <SplashScreen />}
+      <div
+        className={`${
+          splash ? "fixed" : "relative"
+        } noise-bg dark min-h-screen min-w-screen antialiased overflow-y-scroll no-scrollbar bg-zinc-950 font-instrumentSans`}
+      >
+        <Header />
+        <CanvasObject setLoad={setIsLoad} />
+        <About />
+        <Projects />
+        <Experiences />
+        <Footer />
+      </div>
       <NoiseBG />
     </>
   );
