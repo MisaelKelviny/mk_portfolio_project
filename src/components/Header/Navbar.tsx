@@ -82,6 +82,10 @@ const Navbar = () => {
         />
         <AnimatedText text={"GITHUB"} link="https://github.com/MisaelKelviny" />
         <AnimatedText
+          text={"BEHANCE"}
+          link="https://www.behance.net/MisaelKelviny"
+        />
+        <AnimatedText
           text={"My.CV"}
           link="/Misael-Kelviny-da-Silva-Resume.pdf"
         />
