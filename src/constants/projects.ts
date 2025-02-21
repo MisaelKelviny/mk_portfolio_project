@@ -1,5 +1,7 @@
+import cssSpeedRun from "../assets/css-speed-run.png";
 import fintax from "../assets/fintax.png";
 import crypto from "../assets/videos/crypto.mp4";
+import financeio from "../assets/videos/financeio.mp4";
 import si from "../assets/videos/si.mp4";
 import vapor from "../assets/videos/vaporwave.mp4";
 
@@ -31,5 +33,28 @@ export const projects = [
     image: fintax,
     technologies: ["Next.js", "React", "Typescript", "SASS"],
     link: "https://misaelkelviny.github.io/fintaxSafe/",
+  },
+  {
+    id: "finaceio",
+    title: "Finance.io",
+    video: financeio,
+    technologies: [
+      "Next.js",
+      "React",
+      "tRPC",
+      "Tailwind",
+      "Shadcn",
+      "PostgreSQL",
+      "Prisma",
+      "Vercel",
+    ],
+    link: "https://financeio.vercel.app",
+  },
+  {
+    id: "CSS-Speed-Run",
+    title: "CSS Speed Run",
+    image: cssSpeedRun,
+    technologies: ["Styled Components", "React", "Vite", "Vercel"],
+    link: "https://css-speed-run.vercel.app",
   },
 ];
