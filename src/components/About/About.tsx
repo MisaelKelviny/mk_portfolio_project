@@ -10,7 +10,7 @@ export const About = () => {
     <Container>
       <div
         ref={ref}
-        className="h-full w-full items-center justify-center border border-y-transparent border-x-0 flex flex-col z-20 relative"
+        className="h-full w-full items-center justify-center border border-y-transparent border-x-0 flex flex-col z-20 relative pt-40 sm:pt-0"
       >
         <motion.div className="border w-full flex flex-col lg:flex-row items-center justify-between gap-20 border-t-zinc-800 border-b-0 border-x-transparent md:px-10 pt-20 md:pt-0 ">
           <motion.div

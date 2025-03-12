@@ -11,16 +11,14 @@ import SplashScreen from "./components/SplashScreen/SplashScreen";
 import { TIMER } from "./constants/timer";
 
 function App() {
-  const [isLoad, setIsLoad] = useState<boolean>(true);
+  const [, setIsLoad] = useState<boolean>(true);
   const [splash, setSplash] = useState<boolean>(true);
 
   useEffect(() => {
-    if (!isLoad) {
-      setTimeout(() => {
-        setSplash(false);
-      }, TIMER);
-    }
-  }, [isLoad]);
+    setTimeout(() => {
+      setSplash(false);
+    }, TIMER);
+  }, []);
 
   return (
     <>

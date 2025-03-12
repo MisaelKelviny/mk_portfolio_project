@@ -10,11 +10,14 @@ function Footer() {
               misaelkelviny@gmail.com
             </a>
           </div>
-          <div>All content of this website are property of Misael Kelviny.</div>
+          <div>
+            <p>All content of this website are property of Misael Kelviny.</p>
+          </div>
           <div>
             <a
               href="https://github.com/MisaelKelviny/mk_portfolio_project"
               className="underline text-zinc-500"
+              style={{ overflowWrap: "anywhere" }}
             >
               https://github.com/MisaelKelviny/mk_portfolio_project
             </a>
