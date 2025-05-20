@@ -26,7 +26,7 @@ const Landing = () => {
             className="relative h-full overflow-hidden py-12 mx-auto hidden xl:block"
             style={{ width: "30%" }}
           >
-            <div className="absolute inset-0 z-20 before:absolute before:left-0 before:top-0 before:w-1/4 before:h-full before:bg-gradient-to-r before:from-zinc-950 before:to-transparent before:filter before:blur-sm after:absolute after:right-0 after:top-0 after:w-1/4 after:h-full after:bg-gradient-to-l after:from-zinc-950 after:to-transparent after:filter after:blur-sm"></div>
+            <div className="absolute inset-0 before:absolute before:left-0 before:top-0 before:w-1/4 before:h-full before:bg-gradient-to-r before:from-zinc-950 before:to-transparent before:filter before:blur-sm after:absolute after:right-0 after:top-0 after:w-1/4 after:h-full after:bg-gradient-to-l after:from-zinc-950 after:to-transparent after:filter after:blur-sm"></div>
 
             <motion.div
               className="flex"
