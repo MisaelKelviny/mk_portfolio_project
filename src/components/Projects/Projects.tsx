@@ -62,8 +62,10 @@ function Projects() {
                 </div>
               </a>
               <div className="flex flex-col gap-2">
-                <p className="uppercase font-semibold text-2xl">{p.title}</p>
-                <div className="flex gap-2 text-left">
+                <p className="uppercase font-semibold text-2xl overflow-hidden ">
+                  {p.title}
+                </p>
+                <div className="flex text-wrap flex-wrap gap-2 text-left">
                   {p.technologies.map((p) => (
                     <span key={p} className="text-zinc-500">
                       {p}
