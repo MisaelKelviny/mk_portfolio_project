@@ -45,8 +45,7 @@ export function Section({
       }`}
       aria-label={label}
       aria-hidden={!active}
-      // `inert` keeps hidden sections out of the tab order (not typed in React 18).
-      {...{ inert: active ? undefined : "" }}
+      inert={!active}
       style={{ zIndex: index + 1, ...position(index, current) }}
     >
       <div className="grid-bg absolute inset-0" />
