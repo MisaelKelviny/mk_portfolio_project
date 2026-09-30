@@ -8,8 +8,6 @@ import {
 } from "../ui/Icons";
 import { Eyebrow } from "../ui/Section";
 
-const CV_URL = "/Misael-Kelviny-da-Silva-Resume.pdf";
-
 const linkClass =
   "link-btn flex h-[52px] items-center gap-2.5 border border-line-3 px-5 font-mono text-[13px] tracking-[0.08em]";
 
@@ -119,7 +117,7 @@ export function Hero({ t }: Readonly<{ t: Copy }>) {
           <nav className="rv d3 flex flex-wrap gap-3" aria-label="Links">
             <a
               className="link-btn flex h-[52px] items-center gap-2.5 bg-accent px-[22px] font-mono text-[13px] font-medium tracking-[0.08em] text-on-accent [clip-path:polygon(0_0,90%_0,100%_30%,100%_100%,10%_100%,0_70%)] hover:!text-on-accent"
-              href={CV_URL}
+              href={t.cvUrl}
               download="Misael_Kelviny_da_Silva_CV.pdf"
               aria-label={t.cvAria}
             >
