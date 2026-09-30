@@ -3,8 +3,6 @@
 - React
 - TypeScript
 - Vite
-- ThreeJS
-- Framer Motion
 - TailwindCSS
 - Bun.js
 

@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "dev": "bunx --bun vite",
@@ -10,40 +10,23 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-three/offscreen": "^0.0.8",
-    "caniuse-lite": "^1.0.30001718",
     "react": "^18.3.1",
-    "react-animated-cursor": "^2.11.2",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@react-three/fiber": "^8.18.0",
-    "@types/node": "^20.17.50",
-    "@types/react": "^18.3.21",
+    "@types/node": "^22.19.0",
+    "@types/react": "^18.3.28",
     "@types/react-dom": "^18.3.7",
-    "@types/three": "^0.166.0",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
-    "@vitejs/plugin-react-swc": "^3.9.0",
-    "@react-three/postprocessing": "^2.19.1",
+    "@vitejs/plugin-react-swc": "^4.0.0",
     "autoprefixer": "^10.4.21",
-    "@react-three/drei": "^9.122.0",
-    "clsx": "^2.1.1",
     "eslint": "^8.57.1",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.20",
-    "framer-motion": "^11.18.2",
-    "framer-motion-3d": "^11.18.2",
-    "postprocessing": "^6.37.3",
-    "lamina": "^1.1.23",
-    "leva": "^0.9.36",
-    "lucide-react": "^0.412.0",
-    "mini-svg-data-uri": "^1.4.4",
-    "postcss": "^8.5.3",
-    "tailwind-merge": "^2.6.0",
+    "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",
-    "three": "^0.166.1",
-    "typescript": "^5.8.3",
-    "vite": "^5.4.19"
+    "typescript": "^5.9.0",
+    "vite": "^7.0.0"
   }
 }

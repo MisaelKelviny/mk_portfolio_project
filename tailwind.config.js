@@ -1,6 +1,3 @@
-import svgToDataUri from "mini-svg-data-uri";
-import { default as flattenColorPalette } from "tailwindcss/lib/util/flattenColorPalette";
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -8,81 +5,42 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        instrumentSans: ['"Instrument Sans"', "sans-serif"],
+        sans: ['"IBM Plex Sans"', '"Helvetica Neue"', "sans-serif"],
+        mono: ['"IBM Plex Mono"', "monospace"],
+        display: ["Unbounded", "sans-serif"],
       },
-      animation: {
-        fuzzy: "shift 0.2s linear infinite both",
-        aurora: "aurora 60s linear infinite",
+      colors: {
+        bg: "#08060E",
+        ink: "#EEEAF6",
+        body: "#BDB5D2",
+        soft: "#CEC7DF",
+        muted: "#9A90B4",
+        dim: "#6E6290",
+        line: "#221A33",
+        "line-2": "#2A2140",
+        "line-3": "#352A4D",
+        "line-4": "#4A3B6A",
+        tag: "#2F2547",
+        chip: "#0D0A16",
+        shot: "#0C0914",
+        "on-accent": "#140A24",
+        accent: "var(--accent)",
       },
       keyframes: {
-        shift: {
-          "0%": { transform: "translate(10%, 10%)" },
-          "100%": { transform: "translate(-10%, -10%)" },
-        },
-        aurora: {
-          from: {
-            backgroundPosition: "50% 50%, 50% 50%",
-          },
-          to: {
-            backgroundPosition: "350% 50%, 350% 50%",
-          },
+        spin: { to: { transform: "rotate(360deg)" } },
+        pulse: { "0%, 100%": { opacity: "1" }, "50%": { opacity: "0.35" } },
+        scan: {
+          "0%": { transform: "translateY(-100%)" },
+          "100%": { transform: "translateY(100%)" },
         },
       },
-      fontSize: {
-        logo: "clamp(6rem, 6vw, 10rem)",
-        landing: "clamp(3rem, 6vw, 6rem)",
-      },
-      cursor: {
-        pointerAll: "pointer-events: all;",
+      animation: {
+        orbit: "spin 38s linear infinite",
+        "orbit-rev": "spin 26s linear infinite reverse",
+        blink: "pulse 2.4s ease-in-out infinite",
+        scan: "scan 2.2s ease-in-out infinite",
       },
     },
   },
-  plugins: [
-    addVariablesForColors,
-    function ({ matchUtilities, theme }) {
-      matchUtilities(
-        {
-          "bg-grid": (value) => ({
-            backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
-            )}")`,
-          }),
-          "bg-grid-small": (value) => ({
-            backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
-            )}")`,
-          }),
-          "bg-dot": (value) => ({
-            backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="1.6257413380501518"></circle></svg>`
-            )}")`,
-          }),
-          "bg-noise": () => ({
-            backgroundImage: `url("${svgToDataUri(`<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <filter id="noiseFilter">
-              <feTurbulence 
-                type="fractalNoise" 
-                baseFrequency="30" 
-                numOctaves="3" 
-                stitchTiles="stitch" />
-            </filter>
-            <rect width="100%" height="100%" filter="url(#noiseFilter)" />
-          </svg>`)}")`,
-          }),
-        },
-        { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
-      );
-    },
-  ],
+  plugins: [],
 };
-
-function addVariablesForColors({ addBase, theme }) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-  );
-
-  addBase({
-    ":root": newVars,
-  });
-}

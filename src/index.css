@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --accent: #b388ff;
+}
+
 *,
 *::before,
 *::after {
@@ -9,13 +13,94 @@
   margin: 0;
 }
 
-@layer utilities {
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
+body {
+  margin: 0;
+  background: #08060e;
+  overflow: hidden;
+}
+
+a {
+  color: #eeeaf6;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+@layer components {
+  .grid-bg {
+    background-color: #08060e;
+    background-image: linear-gradient(
+        rgba(150, 110, 230, 0.08) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(150, 110, 230, 0.08) 1px, transparent 1px);
+    background-size: 64px 64px;
+    background-position: -1px -1px;
   }
 
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  .ghost-num {
+    color: transparent;
+    -webkit-text-stroke: 1px #2a2140;
+  }
+
+  /* Reveal of each block once its section becomes the active one. */
+  .sec .rv {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 700ms ease,
+      transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .sec.is-active .rv {
+    opacity: 1;
+    transform: none;
+    transition-delay: 550ms;
+  }
+  .sec.is-active .rv.d2 {
+    transition-delay: 680ms;
+  }
+  .sec.is-active .rv.d3 {
+    transition-delay: 810ms;
+  }
+
+  .link-btn {
+    transition: border-color 300ms, color 300ms, transform 300ms;
+  }
+  .link-btn:hover {
+    border-color: #6e6290;
+    transform: translateY(-2px);
+  }
+
+  .card {
+    transition: transform 300ms, border-color 300ms;
+  }
+  .card:hover {
+    border-color: #4a3b6a;
+    transform: translateY(-4px);
+  }
+
+  .sec-inner {
+    scrollbar-width: thin;
+    scrollbar-color: #352a4d transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-orbit,
+  .animate-orbit-rev,
+  .animate-blink,
+  .animate-scan {
+    animation: none;
+  }
+  .sec,
+  .sec .rv {
+    transition-duration: 1ms !important;
+    transition-delay: 0ms !important;
   }
 }
